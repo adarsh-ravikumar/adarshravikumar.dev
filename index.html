@@ -6,7 +6,7 @@
     <title>Adarsh Ravikumar</title>
     <meta
       name="description"
-      content="Adarsh Ravikumar — Building low-level software from the ground up."
+      content="Building low-level software from the ground up."
     />
 
     <link
@@ -38,18 +38,24 @@
 
       body {
         font-family: system-ui, sans-serif;
-        max-width: min(100svh, 550px);
+        max-width: min(100%, 600px);
         margin: 0 auto;
-        padding-top: clamp(3rem, 6vw, 5rem);
+        padding-top: clamp(2rem, 6vw, 5rem);
         padding-inline: clamp(2rem, 6vw, 5rem);
         padding-bottom: 0;
       }
 
       h1 {
-        font-size: clamp(2.3rem, 3vw, 2.8rem);
+        font-size: clamp(2.2rem, 3.1vw, 3.5rem);
         line-height: 1.1;
         font-weight: 700;
         white-space: nowrap;
+      }
+      
+      @media screen and (max-width: 350px) {
+        h1 {
+          white-space: wrap;
+        }
       }
 
       h2 {
@@ -57,6 +63,20 @@
         line-height: 1.25;
         font-weight: 700;
         margin-bottom: 1rem;
+      }
+
+      h3 {
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        gap: 0.5rem;
+        width: 80%;
+      }
+
+      h3 span {
+        font-weight: 400;
+        font-size: clamp(0.8rem, 1vw, 1.1rem);
+        opacity: 0.6;
       }
 
       h3 a {
@@ -74,7 +94,7 @@
       }
 
       section {
-        margin-top: clamp(3rem, 6vw, 5rem);
+        margin-top: clamp(1.5rem, 3vw, 2.5rem);
       }
 
       p {
@@ -83,7 +103,7 @@
       }
 
       ul {
-        list-style: none;
+        list-style: inside circle;
         color: #333333;
         white-space: nowrap;
       }
@@ -120,9 +140,7 @@
 
       <nav>
         <a href="https://www.github.com/adarsh-ravikumar">GitHub</a>
-        <a href="https://www.linkedin.com/in/adarshravikumar/"
-          >LinkedIn</a
-        >
+        <a href="https://www.linkedin.com/in/adarshravikumar/">LinkedIn</a>
         <a href="mailto:adarsh.ravikumar3141@gmail.com">Email</a>
       </nav>
     </header>
@@ -136,10 +154,25 @@
             <a href="https://www.github.com/adarsh-ravikumar/cortada">
               Cortada
             </a>
+            <span>C++</span>
           </h3>
-          <p>
-            An experimental lightweight engine for expressive low-poly games.
-          </p>
+          <p>Lightweight low-poly game engine</p>
+        </article>
+
+        <article class="project">
+          <h3>
+            <a href="https://www.github.com/adarsh-ravikumar/atlas"> Atlas </a>
+            <span>C</span>
+          </h3>
+          <p>Userspace virtual memory with paging and swap.</p>
+        </article>
+
+        <article class="project">
+          <h3>
+            <a href="https://www.github.com/adarsh-ravikumar/chip8"> CHIP-8 </a>
+            <span>C</span>
+          </h3>
+          <p>CHIP-8 virtual machine with full instruction set.</p>
         </article>
       </section>
 
