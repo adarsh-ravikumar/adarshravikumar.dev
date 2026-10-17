@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Projects from "../components/projects.astro"
+import Posts from "../components/posts.astro"
+---
+
+<BaseLayout description="Building low-level software, from the ground up." url={`/`} type="website" >
+  <Projects />
+  <Posts limit={3} />
+
+  <a href="/blogs" id="all-posts">
+    All Posts
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+      <path class="icon-fill" d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
+    </svg>
+  </a>
+</BaseLayout>
+
+<style>
+  #all-posts {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+
+    width: fit-content;
+  }
+</style>

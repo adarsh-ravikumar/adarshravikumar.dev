@@ -1,0 +1,286 @@
+---
+const { active } = Astro.props;
+---
+
+<header class="desktop">
+  <section id="main-header">
+    <a href="/">
+      <h1>
+        Adarsh Ravikumar
+      </h1>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li>
+          {active == "Blogs" ? 
+            <a href="/blogs" class="nav-active">
+              Blogs
+            </a>
+          :
+            <a href="/blogs">
+              Blogs
+            </a>
+          }
+        </li>
+        <li>
+          {active == "About" ? 
+            <a href="/about" class="nav-active">
+              About
+            </a>
+          :
+            <a href="/about">
+              About
+            </a>
+          }
+        </li>
+        <li>
+          <button type="button" aria-label="Switch to dark theme" id="desktop-theme-switcher">
+            <img src="/dark.svg" />
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="sub-header">
+    <h2>Building low-level software, from the ground up.</h2>
+
+    <a id="gh-header" aria-label="Github URL" href="https://www.github.com/adarsh-ravikumar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1_90)">
+        <path class="icon-fill" d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM14.534 19.59C14.129 19.668 14 19.419 14 19.206V17.011C14 16.264 13.738 15.778 13.45 15.53C15.232 15.332 17.104 14.655 17.104 11.583C17.104 10.709 16.792 9.995 16.281 9.436C16.363 9.234 16.637 8.42 16.202 7.319C16.202 7.319 15.531 7.104 14.004 8.139C13.364 7.959 12.68 7.872 12 7.868C11.32 7.871 10.636 7.959 9.997 8.137C8.469 7.102 7.797 7.317 7.797 7.317C7.363 8.419 7.637 9.232 7.72 9.435C7.208 9.995 6.896 10.708 6.896 11.582C6.896 14.646 8.763 15.333 10.541 15.536C10.312 15.736 10.105 16.088 10.033 16.606C9.576 16.81 8.419 17.163 7.705 15.94C7.705 15.94 7.282 15.172 6.478 15.115C6.478 15.115 5.698 15.105 6.423 15.602C6.423 15.602 6.948 15.848 7.312 16.772C7.312 16.772 7.775 18.2 10 17.716V19.205C10 19.416 9.871 19.664 9.472 19.59C6.292 18.533 4 15.534 4 12C4 7.581 7.582 4 12 4C16.418 4 20 7.581 20 12C20 15.533 17.711 18.531 14.534 19.59Z" />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_90">
+            <rect width="24" height="24" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+
+      @adarsh-ravikumar
+    </a>
+  </section>
+</header>
+
+<header class="mobile">
+  <section id="main-header">
+    <a href="/">
+      <h1>
+        Adarsh Ravikumar
+      </h1>
+
+      <h2>Building low-level software, from the ground up.</h2>
+    </a>
+  </section>
+
+  <section id="sub-header">
+    <nav aria-label="Main navigation">
+      <ul>
+        <li>
+          <button type="button" aria-label="Switch to dark theme" id="mobile-theme-switcher">
+            <img src="/dark.svg" />
+          </button>
+        </li>
+        <li>
+          {active == "Blogs" ? 
+            <a href="/blogs" class="nav-active">
+              Blogs
+            </a>
+          :
+            <a href="/blogs">
+              Blogs
+            </a>
+          }
+        </li>
+        <li>
+          {active == "About" ? 
+            <a href="/about" class="nav-active">
+              About
+            </a>
+          :
+            <a href="/about">
+              About
+            </a>
+          }
+        </li>
+      </ul>
+    </nav>
+    <a id="gh-header" aria-label="Github URL" href="https://www.github.com/adarsh-ravikumar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1_90)">
+        <path class="icon-fill" d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM14.534 19.59C14.129 19.668 14 19.419 14 19.206V17.011C14 16.264 13.738 15.778 13.45 15.53C15.232 15.332 17.104 14.655 17.104 11.583C17.104 10.709 16.792 9.995 16.281 9.436C16.363 9.234 16.637 8.42 16.202 7.319C16.202 7.319 15.531 7.104 14.004 8.139C13.364 7.959 12.68 7.872 12 7.868C11.32 7.871 10.636 7.959 9.997 8.137C8.469 7.102 7.797 7.317 7.797 7.317C7.363 8.419 7.637 9.232 7.72 9.435C7.208 9.995 6.896 10.708 6.896 11.582C6.896 14.646 8.763 15.333 10.541 15.536C10.312 15.736 10.105 16.088 10.033 16.606C9.576 16.81 8.419 17.163 7.705 15.94C7.705 15.94 7.282 15.172 6.478 15.115C6.478 15.115 5.698 15.105 6.423 15.602C6.423 15.602 6.948 15.848 7.312 16.772C7.312 16.772 7.775 18.2 10 17.716V19.205C10 19.416 9.871 19.664 9.472 19.59C6.292 18.533 4 15.534 4 12C4 7.581 7.582 4 12 4C16.418 4 20 7.581 20 12C20 15.533 17.711 18.531 14.534 19.59Z" />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_90">
+            <rect width="24" height="24" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+
+      @adarsh-ravikumar
+    </a>
+  </section>
+</header>
+
+<script>
+  const nextTheme = () => window.theme == "dark" ? "light" : "dark";
+
+  let desktopSwitcher = document.querySelector("#desktop-theme-switcher");
+  let desktopImg = desktopSwitcher.querySelector("img");
+
+  let mobileSwitcher = document.querySelector("#mobile-theme-switcher");
+  let mobileImg = mobileSwitcher.querySelector("img");
+
+  const saved = localStorage.getItem("theme");
+
+  window.theme = saved ? saved : (window.matchMedia('(perfers-color-scheme: dark)').matches ? "dark" : "light");
+  localStorage.setItem("theme", window.theme);
+
+  document.documentElement.id = window.theme;
+
+  const updateIcons = () => {
+    desktopSwitcher.ariaLabel = `Switch to ${nextTheme()} theme`;
+    desktopImg.src = `/${nextTheme()}.svg`;
+
+    mobileSwitcher.ariaLabel = `Switch to ${nextTheme()} theme`;
+    mobileImg.src = `/${nextTheme()}.svg`;
+  }
+
+  const toggleTheme = () => {
+    window.theme = nextTheme();
+    document.documentElement.id = window.theme;
+    localStorage.setItem("theme", window.theme);
+    updateIcons();
+  }
+
+  updateIcons();
+
+  mobileSwitcher.addEventListener("click", toggleTheme)
+  desktopSwitcher.addEventListener("click", toggleTheme)
+</script>
+
+<style>
+  .nav-active {
+    border-bottom: 3px solid var(--accent);
+  }
+
+  header {
+    margin-block: 2rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        &:hover {
+          color: var(--accent)
+        }
+      }
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      li:has(button),
+      button {
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    #main-header,
+    #sub-header {
+      width: 100%;
+      border-bottom: 2px solid var(--separator-faint);
+    }
+
+    #sub-header a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 669px) {
+    header.desktop {
+      display: none;
+    }
+
+    header.mobile {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 670px) {
+    header.desktop {
+      display: block;
+    }
+
+    header.mobile {
+      display: none;
+    }
+  }
+
+  header.desktop {
+    #main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 0.25rem;
+
+      nav ul {
+        gap: 3.5rem;
+      }
+    }
+
+    #sub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 0.5rem;
+    }
+  }
+
+  header.mobile {
+    #main-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      padding-block: 1rem;
+    }
+
+    #sub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-block: 0.8rem;
+
+      nav ul {
+        gap: 1.5rem;
+      }
+    }
+  }
+</style>

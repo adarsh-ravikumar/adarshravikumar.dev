@@ -1,0 +1,86 @@
+---
+import {getCollection} from "astro:content";
+
+const { limit = 0 } = Astro.props;
+
+let posts = (await getCollection("posts"))
+  .sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  if (limit > 0) {
+  posts = posts.slice(0, limit);
+  }
+---
+
+<section id="posts">
+  {posts.map((post) => {
+  let readTime = Math.ceil((post.body ? post.body.split(" ").length : 0) / 238);
+
+  return (
+    <article class="post">
+      <a href={`/blogs/${post.id}`}>
+        <p class="title">{post.data.title}</p>
+        <div class="meta">
+          <time datetime={post.data.pubDate.toISOString()}>
+            <i>
+              {post.data.pubDate.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              }).replace(/(\d{1,2}) (\w+) (\d{4})/, "$1 $2, $3")}
+            </i>
+
+          </time>
+
+          <span class="sep-dot"></span>
+
+          <i>~ {readTime} min read</i>
+        </div>
+
+        <p class="desc">{post.data.description}</p>
+      </a>
+    </article>
+    )}
+  )}
+</section>
+
+<style>
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    margin-bottom: 2.1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .title {
+    line-height: 1;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    i {
+      font-size: 0.9rem;
+    }
+  }
+
+  .desc {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+</style>

@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Projects from "../components/projects.astro"
+import Posts from "../components/posts.astro"
+---
+
+<BaseLayout title="About" description="Building low-level software, from the ground up." url={`/about`} type="website" >
+  <article>
+    <section aria-label="About Adarsh Ravikumar">
+      <h1>About</h1>
+      <ul>
+        <li>Thinking grains of sand fascinate me.</li>
+        <li>Teaching is the biggest virtue.</li>
+        <li>Open-source is the only right source.</li>
+        <li>Comfort begets ego; ego kills man.</li>
+        <li>From கோவை, தமிழ்நாடு  (Coimbatore, Tamil Nadu, India)</li>
+      </ul> 
+    </section>
+
+    <section aria-label="Focus">
+      <h1>Focus</h1>
+      <ul>
+        <li>First-principles problem solving</li>
+        <li>Systems and architecture</li>
+        <li>Hand-crafted code</li>
+      </ul> 
+    </section>
+    <Projects />
+  </article>
+</BaseLayout>
+
+
+<style>
+  article {
+    section {
+      width: 100%;
+      border-bottom: 2px solid var(--separator-faint);
+      margin-block: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    section:nth-child(3) {
+      border-bottom: none !important;
+      padding-bottom: 1rem !important;
+    }
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-block: 1rem;
+    line-height: 1;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+</style>
